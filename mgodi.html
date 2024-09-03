@@ -1,0 +1,58 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mgodi App</title>
+    <link rel="stylesheet" href="statistic/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Mgodi App</h1>
+        <form action="/predict" method="post">
+            <label for="date">Date:</label>
+            <input type="text" id="date" name="date"><br><br>
+            <label for="precipitation">Precipitation:</label>
+            <input type="text" id="precipitation" name="precipitation"><br><br>
+            <label for="temp_max">Temp Max:</label>
+            <input type="text" id="temp_max" name="temp_max"><br><br>
+            <label for="temp_min">Temp Min:</label>
+            <input type="text" id="temp_min" name="temp_min"><br><br>
+            <label for="wind">Wind:</label>
+            <input type="text" id="wind" name="wind"><br><br>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mgodi App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Mgodi App</h1>
+        <form action="/predict" method="post">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date"><br><br>
+            <label for="precipitation">Precipitation:</label>
+            <input type="text" id="precipitation" name="precipitation"><br><br>
+            <label for="temp_max">Temp Max:</label>
+            <input type="text" id="temp_max" name="temp_max"><br><br>
+            <label for="temp_min">Temp Min:</label>
+            <input type="text" id="temp_min" name="temp_min"><br><br>
+            <label for="wind">Wind:</label>
+            <input type="text" id="wind" name="wind"><br><br>
+            <input type="submit" value="Predict">
+        </form>
+        {% if prediction is not none %}
+            <h2>Predicted Weather: {{ prediction }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
